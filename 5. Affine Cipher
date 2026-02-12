@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main(){
+    char p[100];
+    int a,b;
+    gets(p);
+    scanf("%d%d",&a,&b);
+
+    for(int i=0;p[i];i++)
+        if(isalpha(p[i]))
+            p[i]=(a*(p[i]-'a')+b)%26+'a';
+
+    printf("%s",p);
+    return 0;
+}
