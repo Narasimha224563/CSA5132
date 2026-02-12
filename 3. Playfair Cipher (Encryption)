@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+
+char mat[5][5];
+
+void create(char key[]){
+    int used[26]={0},k=0;
+    for(int i=0;i<strlen(key);i++){
+        int c=key[i]-'A';
+        if(c==9) c=8;
+        if(!used[c]){
+            mat[k/5][k%5]=c+'A';
+            used[c]=1; k++;
+        }
+    }
+    for(int i=0;i<26;i++)
+        if(!used[i] && i!=9)
+            mat[k/5][k%5]=i+'A',k++;
+}
+
+int main(){
+    char key[20];
+    gets(key);
+    create(key);
+    for(int i=0;i<5;i++){
+        for(int j=0;j<5;j++)
+            printf("%c ",mat[i][j]);
+        printf("\n");
+    }
+    return 0;
+}
