@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main(){
+    int key[2][2]={{9,4},{5,7}};
+    char p[50];
+    gets(p);
+
+    for(int i=0;p[i];i+=2){
+        int x=p[i]-'a', y=p[i+1]-'a';
+        printf("%c%c",
+        (key[0][0]*x+key[0][1]*y)%26+'a',
+        (key[1][0]*x+key[1][1]*y)%26+'a');
+    }
+}
