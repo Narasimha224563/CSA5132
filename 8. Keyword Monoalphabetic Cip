@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    char key[20],map[26]={0};
+    gets(key);
+    int k=0;
+
+    for(int i=0;key[i];i++)
+        if(!map[key[i]-'A'])
+            map[key[i]-'A']=1,printf("%c ",key[i]);
+
+    for(int i=0;i<26;i++)
+        if(!map[i]) printf("%c ",i+'A');
+}
