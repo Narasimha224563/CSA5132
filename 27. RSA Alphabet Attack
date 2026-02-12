@@ -1,0 +1,5 @@
+#include <stdio.h>
+
+int main(){
+    printf("Small plaintext space enables brute force\n");
+}
