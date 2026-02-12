@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main(){
+    char p[]="sendmoremoney";
+    int key[]={9,0,1,7,23,15,21,14,11,11,2,8,9};
+
+    for(int i=0;p[i];i++)
+        printf("%c",(p[i]-'a'+key[i])%26+'a');
+}
