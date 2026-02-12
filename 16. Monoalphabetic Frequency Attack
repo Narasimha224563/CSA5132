@@ -1,0 +1,5 @@
+#include <stdio.h>
+
+int main(){
+    printf("Sort letters by frequency and substitute\n");
+}
