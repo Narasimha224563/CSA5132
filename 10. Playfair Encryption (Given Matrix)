@@ -1,0 +1,5 @@
+#include <stdio.h>
+
+int main(){
+    printf("Encrypt message using given Playfair matrix\n");
+}
