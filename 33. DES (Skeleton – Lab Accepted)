@@ -1,0 +1,5 @@
+#include <stdio.h>
+int main(){
+    printf("DES uses 16 rounds, 64-bit blocks, 56-bit key");
+    return 0;
+}
