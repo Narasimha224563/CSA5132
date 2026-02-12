@@ -1,0 +1,5 @@
+#include <stdio.h>
+
+int main(){
+    printf("64-bit const=0x1B, 128-bit const=0x87\n");
+}
