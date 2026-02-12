@@ -1,0 +1,5 @@
+#include <stdio.h>
+
+int main(){
+    printf("Knowing common factor reveals private key\n");
+}
