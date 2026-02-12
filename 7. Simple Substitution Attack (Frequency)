@@ -1,0 +1,8 @@
+#include <stdio.h>
+
+int main(){
+    char c[500];
+    gets(c);
+    printf("Use frequency analysis manually\n");
+    printf("%s",c);
+}
