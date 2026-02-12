@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main(){
+    char c[100];
+    gets(c);
+    for(int k=0;k<26;k++){
+        printf("k=%d: ",k);
+        for(int i=0;c[i];i++)
+            printf("%c",(c[i]-'a'+k)%26+'a');
+        printf("\n");
+    }
+}
