@@ -1,0 +1,7 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    double keys=log2(25*24*23);
+    printf("Approx power of 2 = %.2lf\n",keys);
+}
