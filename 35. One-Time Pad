@@ -1,0 +1,5 @@
+#include <stdio.h>
+
+int main(){
+    printf("OTP is perfectly secure if key is random\n");
+}
