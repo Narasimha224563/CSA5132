@@ -1,0 +1,5 @@
+#include <stdio.h>
+
+int main(){
+    printf("ECB affects one block, CBC affects two blocks\n");
+}
