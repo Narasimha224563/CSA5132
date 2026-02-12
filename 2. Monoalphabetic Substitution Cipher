@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char text[100], map[26];
+    gets(text);
+    for(int i=0;i<26;i++) scanf(" %c",&map[i]);
+
+    for(int i=0;text[i];i++)
+        if(isalpha(text[i]))
+            text[i]=map[tolower(text[i])-'a'];
+
+    printf("%s",text);
+    return 0;
+}
