@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <string.h>
+
+int modInverse(int a) {
+    for (int i = 1; i < 26; i++)
+        if ((a * i) % 26 == 1)
+            return i;
+    return -1;
+}
+
+int main() {
+    char most, second, text[100];
+
+    printf("Enter most frequent letter: ");
+    scanf(" %c", &most);
+
+    printf("Enter second most frequent letter: ");
+    scanf(" %c", &second);
+
+    printf("Enter ciphertext (CAPITAL letters only): ");
+    scanf("%s", text);
+
+    int a = (most - second + 26) % 26;
+    int inv = modInverse(a);
+
+    if (inv == -1) {
+        printf("Multiplicative inverse does not exist.\n");
+        return 0;
+    }
+
+    int b = ((most - 'A') - inv * (most - 'A')) % 26;
+    if (b < 0) b += 26;
+
+    printf("\nDecrypted text: ");
+
+    for (int i = 0; text[i]; i++) {
+        int x = text[i] - 'A';
+        int p = (inv * (x - b)) % 26;
+        if (p < 0) p += 26;
+        printf("%c", p + 'A');
+    }
+
+    return 0;
+}
