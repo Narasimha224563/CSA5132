@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+#define ALPHABET_SIZE 26
+
+void decrypt(const char *cipher, int shift, char *plain) {
+    for (int i = 0; cipher[i]; i++) {
+        if (isalpha(cipher[i])) {
+            char base = isupper(cipher[i]) ? 'A' : 'a';
+            plain[i] = (cipher[i] - base - shift + 26) % 26 + base;
+        } else {
+            plain[i] = cipher[i];
+        }
+    }
+    plain[strlen(cipher)] = '\0';
+}
+
+int main() {
+    const char *ciphertext = "Uifsf jt b tfdsfu djqifs xjuipvu uif mfuufs!";
+    char plaintext[256];
+
+    printf("Ciphertext: %s\n\n", ciphertext);
+
+    for (int shift = 0; shift < 26; shift++) {
+        decrypt(ciphertext, shift, plaintext);
+        printf("Shift %2d: %s\n", shift, plaintext);
+    }
+
+    return 0;
+}
